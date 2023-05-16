@@ -1,6 +1,6 @@
 &PARAMETERS
 
-caseid ='128x128x64'
+caseid ='128x128x64_ref_rce'
 
 nrestart = 0,
 
@@ -8,16 +8,16 @@ dt = 10.,
 dx = 1000.
 dy = 1000.
 
-day0=0.25,
+day0=0.,
 
-nstop    = 25920,
+nstop    = 4320,
 nprint   = 60,
 nstat    = 360,
 nstatfrq = 60,
 
 restart_sep = .false.,
 output_sep = .false.,
-!restart_skip = 9,
+nrestart_skip = 39,
 
 dofplane = .false.
 docoriolis = .false.,
@@ -25,7 +25,11 @@ docoriolis = .false.,
 LES_S = .false.
 
 doseasons = .false.,
-nrad = 90,
+nrad = 30,
+doperpetual = .true.,
+dosolarconstant = .true.,
+solar_constant = 551.58,
+zenith_angle = 42.05,
 
 OCEAN = .true.,
 tabs_s = 300.,
