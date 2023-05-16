@@ -24,7 +24,7 @@ if(masterproc) call header()
 !------------------------------------------------------------------
 ! Initialize timing library.  2nd arg 0 means disable, 1 means enable
 
-   call t_setoptionf (1, 0)
+   call t_setoptionf (1, 1) !QN: want timing info
    call t_initializef ()
 
    call t_startf ('total')

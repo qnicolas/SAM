@@ -50,7 +50,7 @@
 	endif
 
 	if(nstep.ge.nstop) then
-           call exit(9) ! avoid resubmission when finished
+           call exit(0) !QN: want clean exit
         elseif(nelapse.eq.0) then
            call exit(0) !bloss: clean exit condition for restart
         else

@@ -1,4 +1,3 @@
-set -e
 module load cpu/1.0
 module load PrgEnv-gnu/8.3.3
 module swap gcc/11.2.0

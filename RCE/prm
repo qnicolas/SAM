@@ -10,7 +10,7 @@ dy = 1000.
 
 day0=0.,
 
-nstop    = 4320,
+nstop    = 432000,
 nprint   = 60,
 nstat    = 360,
 nstatfrq = 60,
@@ -65,7 +65,7 @@ nsave2Dend      = 999999999,
 save2Dsep = .false.
 save2Davg = .true.
 
-nsave3D = 360,
+nsave3D = 2160,
 nsave3Dstart    = 0,
 nsave3Dend      = 999999999,
 save3Dbin      = .false.

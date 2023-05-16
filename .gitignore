@@ -57,3 +57,4 @@ UTIL/isccp2nc
 UTIL/misr2nc
 UTIL/modis2nc
 UTIL/stat2nc
+UTIL/qn_stat2nc
