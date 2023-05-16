@@ -125,40 +125,63 @@ endif
 #----------------------------------------------------------------------
 # Linux, Yellowstone, Cheyenne
 # #
+#
+# ifeq ($(PLATFORM),Linux)
+#
+##FF77 = mpipf90 -c -Mextend
+##FF90 = mpipf90 -c -Mfreeform
+##CC = mpipcc -c  -DLINUX
+##
+##FFLAGS = -Mnoframe -Mvect -Munroll -O2 -Mbyteswapio  
+##
+##FFLAGS += -I${INC_NETCDF}
+##LD = mpipf90
+##LDFLAGS =  -L${LIB_NETCDF} -lnetcdf
+#
+#
+## FF77 = ftn -fpic -i_dynamic -mcmodel=large -c -fixed -extend_source
+## FF90 = ftn -fpic -i_dynamic -mcmodel=large -c -free
+## CC = mpcc -fpic -i_dynamic -mcmodel=large -c -O2 -DLINUX
+# FF77 = mpif90 -c -fixed -extend_source
+# FF90 = mpif90 -c -free
+# CC = mpicc -c -O3 -DLINUX
+#
+#
+## FFLAGS = -xHost -O3 -pad 
+#FFLAGS =  -O2 
+##FFLAGS =  -O1  -mcmodel=large  
+##FFLAGS =  -O2  -xCORE-AVX2  -mcmodel=large  
+## FFLAGS = -g -O3 -fpe0 -traceback -pad  -mcmodel=large
+## FFLAGS = -g -ftrapuv -check all -traceback -W1 
+#
+# FFLAGS += -I${INC_NETCDF}
+## LD = mpif90 -fpic -i_dynamic -mcmodel=large
+# LD = mpif90  -mcmodel=large
+# LDFLAGS = -L${LIB_NETCDF} -lnetcdff 
+#
+#
+# endif
+
+#----------------------------------------------------------------------
+# !QN
+# Linux, Perlmutter (NERSC)
+# #
 
  ifeq ($(PLATFORM),Linux)
 
-#FF77 = mpipf90 -c -Mextend
-#FF90 = mpipf90 -c -Mfreeform
-#CC = mpipcc -c  -DLINUX
-#
-#FFLAGS = -Mnoframe -Mvect -Munroll -O2 -Mbyteswapio  
-#
-#FFLAGS += -I${INC_NETCDF}
-#LD = mpipf90
-#LDFLAGS =  -L${LIB_NETCDF} -lnetcdf
+ INC_NETCDF   := $(NETCDF_DIR)/include
+ LIB_NETCDF   := $(NETCDF_DIR)/lib
 
+ FF77 = ftn -c -ffixed-form -ffixed-line-length-0 -extend_source
+ FF90 = ftn -c -ffree-form -ffree-line-length-0
+ CC = cc -c -O3 -DLINUX
 
-# FF77 = ftn -fpic -i_dynamic -mcmodel=large -c -fixed -extend_source
-# FF90 = ftn -fpic -i_dynamic -mcmodel=large -c -free
-# CC = mpcc -fpic -i_dynamic -mcmodel=large -c -O2 -DLINUX
- FF77 = mpif90 -c -fixed -extend_source
- FF90 = mpif90 -c -free
- CC = mpicc -c -O3 -DLINUX
-
-
-# FFLAGS = -xHost -O3 -pad 
-FFLAGS =  -O2 
-#FFLAGS =  -O1  -mcmodel=large  
-#FFLAGS =  -O2  -xCORE-AVX2  -mcmodel=large  
-# FFLAGS = -g -O3 -fpe0 -traceback -pad  -mcmodel=large
-# FFLAGS = -g -ftrapuv -check all -traceback -W1 
+ FFLAGS = -fallow-argument-mismatch -O2 
 
  FFLAGS += -I${INC_NETCDF}
 # LD = mpif90 -fpic -i_dynamic -mcmodel=large
- LD = mpif90  -mcmodel=large
+ LD = ftn  -mcmodel=large
  LDFLAGS = -L${LIB_NETCDF} -lnetcdff 
-
 
  endif
 

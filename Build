@@ -3,7 +3,7 @@
 # specify the scratch directory where object files as well as
 # restart and large output data file will be located :
 
-setenv SAM_SCR `pwd`
+setenv SAM_SCR /pscratch/sd/q/qnicolas/SAMdata
 
 # ----------------------------------
 # specify scalar-advection directory in SRC
@@ -14,8 +14,8 @@ setenv ADV_DIR ADV_MPDATA
 setenv SGS_DIR SGS_TKE                 
 
 # specify radiation directory in SRC
-setenv RAD_DIR RAD_CAM                  # Old radiation from CAM3 climate model
-#setenv RAD_DIR RAD_RRTM                # RRTM similar to CESM climate model
+#setenv RAD_DIR RAD_CAM                  # Old radiation from CAM3 climate model
+setenv RAD_DIR RAD_RRTM                # RRTM similar to CESM climate model
 
 # specify microphysics directory in SRC
 setenv MICRO_DIR MICRO_SAM1MOM          # standard SAM single-moment microphysics
@@ -27,7 +27,8 @@ setenv MICRO_DIR MICRO_SAM1MOM          # standard SAM single-moment microphysic
 # ----------------------------------
 # specify (GNU) make utility
 
-setenv GNUMAKE 'make -j8'
+#setenv GNUMAKE 'make -j8'
+setenv GNUMAKE 'make'
 
 #--------------------------------------------
 #--------------------------------------------
