@@ -32,13 +32,13 @@ do k=2,nzm-1
   end if
   do j=1,ny
     do i=1,nx
-      dudt(i,j,k,na) = dudt(i,j,k,na) - rdz*(u(i,j,k1)-u(i,j,k2)) 
-      dvdt(i,j,k,na) = dvdt(i,j,k,na) - rdz*(v(i,j,k1)-v(i,j,k2)) 
+!      dudt(i,j,k,na) = dudt(i,j,k,na) - rdz*(u(i,j,k1)-u(i,j,k2)) 
+!      dvdt(i,j,k,na) = dvdt(i,j,k,na) - rdz*(v(i,j,k1)-v(i,j,k2)) 
       t_tend(i,j,k) =  - rdz * (t(i,j,k1)-t(i,j,k2))
       q_tend(i,j,k) =  &
        - rdz * (micro_field(i,j,k1,index_water_vapor)-micro_field(i,j,k2,index_water_vapor))
-      ulsvadv(k) = ulsvadv(k) - rdz*(u(i,j,k1)-u(i,j,k2)) 
-      vlsvadv(k) = vlsvadv(k) - rdz*(v(i,j,k1)-v(i,j,k2)) 
+!      ulsvadv(k) = ulsvadv(k) - rdz*(u(i,j,k1)-u(i,j,k2)) 
+!      vlsvadv(k) = vlsvadv(k) - rdz*(v(i,j,k1)-v(i,j,k2)) 
     end do
   end do
 

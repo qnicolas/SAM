@@ -1,8 +1,10 @@
 &PARAMETERS
 
-caseid ='128x128x64_ref_rce'
+caseid ='128x128x64_mtnwave_k1e-4_h50_U10_real'
 
-nrestart = 1,
+nrestart = 2,
+case_restart = 'RCE'
+caseid_restart = '128x128x64_ref_rce'
 
 dt = 10.,
 dx = 1000.
@@ -10,7 +12,7 @@ dy = 1000.
 
 day0=0.,
 
-nstop    = 864000,
+nstop    = 17280,
 nprint   = 60,
 nstat    = 360,
 nstatfrq = 60,
@@ -40,11 +42,11 @@ dodamping       = .true.,
 doupperbound    = .false.,
 docloud         = .true.,
 doprecip        = .true.,
-dolongwave      = .true.,
-doshortwave     = .true.,
+dolongwave      = .false.,
+doshortwave     = .false.,
 dosurface       = .true.,
-dolargescale    = .false.,
-doradforcing    = .false.,
+dolargescale    = .true.,
+doradforcing    = .true.,
 dosfcforcing    = .false.,
 donudging_uv    = .false.,
 donudging_tq    = .false.,

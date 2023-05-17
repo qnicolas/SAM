@@ -28,7 +28,7 @@ real, parameter ::  pi = 3.141592653589793
 ! internally set parameters:
 
 real   epsv     ! = (1-eps)/eps, where eps= Rv/Ra, or =0. if dosmoke=.true.
-logical:: dosubsidence = .false.
+logical:: dosubsidence = .true.
 real fcorz      ! Vertical Coriolis parameter
 real :: coszrs = 0.
 real salt_factor ! correction factor for water vapor saturation over sea-water
